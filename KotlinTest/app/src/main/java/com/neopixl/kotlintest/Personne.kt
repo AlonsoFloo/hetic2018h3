@@ -7,7 +7,11 @@ import java.util.*
  * Created by Florian ALONSO on 4/26/18.
  * For Neopixl
  */
-class Personne {
+open class Personne {
+
+    val pokemon: Array<String> by lazy {
+        arrayOf<String>("Pikachu", "Salameche")
+    }
 
     var nom: String = ""
     var prenom: String

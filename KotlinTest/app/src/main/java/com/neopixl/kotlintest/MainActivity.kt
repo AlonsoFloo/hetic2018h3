@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import java.util.*
+import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,6 +40,11 @@ class MainActivity : AppCompatActivity() {
         val leChiffre2 = monTableau.filter {
             // Condition true ou false
             it == 2
+        }.first()
+
+        val leChiffre2Bis = monTableau.filter {item ->
+            // Condition true ou false
+            item == 2
         }.first()
 
 
@@ -83,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         personne.getAgeFunction() // --> 18
         personne.age // --> 18
         //personne.age = 10 // IMPOSSIBLE
-
+        personne.pokemon.size
 
         val personne2 = PersonneConstruct("MOTE", "Yvan")
         val personne2Bis = PersonneConstruct("MOTE", "Yvan", Date())
@@ -97,10 +103,73 @@ class MainActivity : AppCompatActivity() {
         personne.prenom = "JHJKJK"
         personne.prenom = "JHJKasdasdJK"
         personne.prenom = "JHJKhtkhlkhjJK"
-        personne.prenom = null
+        //personne.prenom = null
 
 
 
+
+
+
+        val monTableauMixteDeux: Array<Any> = arrayOf("HEY", 10, true)
+        // SOLUTION 1
+        for (item in monTableauMixteDeux) {
+            val monEntierOptionnel = item as? Int
+            monEntierOptionnel?.plus(10)
+
+            val monEntier = (item as? Int) ?: 0
+            monEntier.plus(10)
+        }
+
+        // SOLUTION 2
+        for (item in monTableauMixteDeux) {
+            if (item is Int) {
+                item.plus(10)
+            } else if (item is String && item.endsWith("Y")) {
+                item.length
+            } else if (item is Boolean) {
+                item.not()
+            }
+        }
+
+        // SOLUTION 3
+        for (item in monTableauMixteDeux) {
+            when(item) {
+                is Int -> item.plus(10)
+                is String -> item.length
+                is Boolean -> item.not()
+            }
+        }
+
+
+
+
+        ajax("http://google.fr", {succes: Boolean ->
+            Log.d("HEY", "LE RETOUR"+ succes)
+            var i = 9
+            System.out.print(succes)
+            i++
+        })
+
+
+
+        val monPremierString = "Salut"
+        val monDeuxiemeString = "Hey"
+        val monTroisiemeString = "Salut"
+        val monQuatriemeString = monPremierString
+        val LOL = true
+
+
+        monPremierString == monDeuxiemeString // false
+        monPremierString == monTroisiemeString // true
+        monPremierString === monTroisiemeString // false
+        monPremierString === monQuatriemeString // true
+        monPremierString == monQuatriemeString // true
+
+
+        val email = "florian@neopixl_com"
+        email.isEmail() // false
+        "Salut".isEmail() // false
+        "florian@neopixl.com".isEmail() // True
 
     }
 
@@ -122,9 +191,24 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    fun ajax(url:String, callback: (success: Boolean) -> Int) {
+        // FAIRE LA REQUETTE RESEAU
+
+
+        // ENVOYER l'INFO AU CALLBACK
+        callback(false)
+    }
 }
 
 
 infix fun Int.moins(valeur: Int) : Int {
     return this - valeur
+}
+
+
+
+fun String.isEmail() : Boolean {
+    val regex = "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]|[\\w-]{2,}))@((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9]))|([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$"
+    return Pattern.compile(regex).matcher(this).matches()
 }
