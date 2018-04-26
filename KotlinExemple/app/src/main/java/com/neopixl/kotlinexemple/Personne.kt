@@ -1,5 +1,6 @@
 package com.neopixl.kotlinexemple
 
+import android.util.Log
 import java.util.*
 
 
@@ -8,9 +9,13 @@ import java.util.*
  * For Neopixl
  */
 
-class Personne(var nom: String, var prenom: String) {
+open class Personne(var nom: String, var prenom: String) : FaireDuBruit {
 
     var birthday: Date? = null
+    val maladi: List<String> by lazy {
+        emptyList<String>()
+    }
+    val maladi2 = emptyList<String>()
 
     constructor(nomCustom: String, prenomCustom: String, birthday: Date) : this(nomCustom, prenomCustom) {
         this.birthday = birthday
@@ -20,7 +25,7 @@ class Personne(var nom: String, var prenom: String) {
 
     val age: Int
         get() {
-            val trueBirthYear = birthday?.year ?: Date().year
+            val trueBirthYear = birthday?.year ?: 0
             // trueBirthYear = birthday == null ? null : birthday.year
             return Date().year - trueBirthYear
         }
@@ -28,10 +33,22 @@ class Personne(var nom: String, var prenom: String) {
 
 
     fun getAgeFun(): Int {
-        this.prenom = "Florian"
-        return Date().year - birthday.year
+        val trueBirthYear = birthday?.year ?: 0
+        return Date().year - trueBirthYear
     }
 
+
+    fun getAgeFunSolution2(): Int {
+        if (birthday == null) {
+            birthday = Date()
+        }
+        return Date().year - birthday!!.year
+    }
+
+
+    override fun faireDuBruit() {
+        Log.d("PERSONNE", "JE FAIS DU BRUIT")
+    }
 
 
 
