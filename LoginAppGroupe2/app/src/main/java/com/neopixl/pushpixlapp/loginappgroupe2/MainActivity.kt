@@ -1,5 +1,7 @@
 package com.neopixl.pushpixlapp.loginappgroupe2
 
+import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -36,6 +38,9 @@ class MainActivity : AppCompatActivity() {
             helloTextView.setTextColor(greenColor)
             helloTextView.text = getString(R.string.success)
 
+            val intent = Intent(this, HomePageActivity::class.java)
+            startActivityForResult(intent, 55)
+
         } else {
             // DISPLAY ERROR
 
@@ -47,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             val builder = AlertDialog.Builder(this)
                     .setTitle("Mon titre")
                     .setMessage("Mon message")
+                    .setCancelable(false)
                     .setNegativeButton("NON", { view, which ->
 
                     })
@@ -54,6 +60,21 @@ class MainActivity : AppCompatActivity() {
             val dialog = builder.create()
             dialog.show()
 
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 55) {
+            if (resultCode == Activity.RESULT_OK) {
+                Toast.makeText(this, "SUCCESS", Toast.LENGTH_SHORT).show()
+
+                if (data != null) {
+                    val email = data.extras.getString("email");
+                    emailEditText.setText(email)
+                }
+            }
         }
     }
 }
