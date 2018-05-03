@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LoginAppGroupe2</string>
+    <string name="hello">Merci de vous connecter</string>
+    <string name="placeholder_email">Email</string>
+    <string name="placeholder_password">Password</string>
+    <string name="login_button">Connexion</string>
+    <string name="success">YOUPIE !!!</string>
+    <string name="error_empty">Field are empty</string>
+</resources>
