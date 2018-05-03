@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LoginAppGroupe1</string>
+    <string name="hello">Salut tous le monde !</string>
+    <string name="placeholder_email">Email</string>
+    <string name="placeholder_password">Password</string>
+    <string name="login_button">Connexion</string>
+    <string name="error_empty">CHAMPS VIDE</string>
+    <string name="success">YOUPIE !</string>
+</resources>

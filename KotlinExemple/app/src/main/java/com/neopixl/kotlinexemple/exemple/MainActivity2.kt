@@ -1,8 +1,9 @@
-package com.neopixl.kotlinexemple
+package com.neopixl.kotlinexemple.exemple
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.neopixl.kotlinexemple.R
 import java.util.*
 import java.util.regex.Pattern
 

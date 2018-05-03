@@ -1,4 +1,4 @@
-package com.neopixl.kotlinexemple
+package com.neopixl.kotlinexemple.exemple
 
 import android.util.Log
 import java.util.*
