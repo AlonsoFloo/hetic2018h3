@@ -23,6 +23,11 @@ class MainActivity : AppCompatActivity() {
 
             tryToLogin()
         }
+
+        contactButton.setOnClickListener {
+            val intent = Intent(this, ContactActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun tryToLogin() {
