@@ -10,6 +10,8 @@ import com.mikepenz.fastadapter.commons.adapters.FastItemAdapter
 import com.mikepenz.fastadapter.listeners.OnClickListener
 import com.neopixl.pushpixlapp.loginappgroupe2.item.ContactItem
 import com.neopixl.pushpixlapp.loginappgroupe2.model.Contact
+import com.neopixl.pushpixlapp.loginappgroupe2.network.ContactJSON
+import com.neopixl.pushpixlapp.loginappgroupe2.network.ContactService
 import kotlinx.android.synthetic.main.activity_contact.*
 
 class ContactActivity : AppCompatActivity() {
@@ -68,6 +70,24 @@ class ContactActivity : AppCompatActivity() {
 
 
                 return true
+            }
+
+        })
+
+        // Appel au WS
+        ContactService.getContacts(object: ContactService.ContactServiceListener{
+            override fun onReceiveResult(contacts: List<ContactJSON>) {
+
+                itemAdapter.clear() // nettoyage de la liste avant de la remplir
+
+                // Remplissage de l'adapter à partir des objets ContactJSON, retransformé en Contact -> ContactItem
+                for(contactJSON in contacts) {
+                    itemAdapter.add(ContactItem(Contact(contactJSON.name.first, contactJSON.name.last)))
+                }
+            }
+
+            override fun onFailed() {
+
             }
 
         })
