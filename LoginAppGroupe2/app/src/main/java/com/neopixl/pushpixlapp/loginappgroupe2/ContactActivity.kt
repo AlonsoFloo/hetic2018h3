@@ -2,7 +2,15 @@ package com.neopixl.pushpixlapp.loginappgroupe2
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import android.view.View
+import android.widget.Toast
+import com.mikepenz.fastadapter.IAdapter
+import com.mikepenz.fastadapter.commons.adapters.FastItemAdapter
+import com.mikepenz.fastadapter.listeners.OnClickListener
+import com.neopixl.pushpixlapp.loginappgroupe2.item.ContactItem
 import com.neopixl.pushpixlapp.loginappgroupe2.model.Contact
+import kotlinx.android.synthetic.main.activity_contact.*
 
 class ContactActivity : AppCompatActivity() {
 
@@ -26,6 +34,43 @@ class ContactActivity : AppCompatActivity() {
         contactsList.add(Contact("Bernardo","Ferrari"))
         contactsList.add(Contact("Yuri","Heupa"))
 
+        // configuration de l'affichage à la verticale
+
+        // LinearLayoutManager || GridLayoutManager
+        contactRecyclerView.layoutManager = LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL, false);
+
+        val itemAdapter = FastItemAdapter<ContactItem>()
+
+        // liaison de l'adaptateur à la liste (RecyclerView)
+        contactRecyclerView.adapter = itemAdapter
+
+        for(contact in contactsList) {
+            val contactItem = ContactItem(contact)
+            itemAdapter.add(contactItem)
+        }
+
+        // Ajout de la gestion du clic sur une cellule :
+
+        itemAdapter.withOnClickListener(object : OnClickListener<ContactItem>{
+            override fun onClick(v: View?, adapter: IAdapter<ContactItem>?, item: ContactItem?, position: Int): Boolean {
+
+                val contact = item?.contact
+
+                if(contact is Contact) {
+                    Toast
+                            .makeText(this@ContactActivity,
+                                    "contact : ${contact.firstName}",
+                                    Toast.LENGTH_SHORT)
+                            .show()
+                }
+
+
+
+                return true
+            }
+
+        })
 
 
 
