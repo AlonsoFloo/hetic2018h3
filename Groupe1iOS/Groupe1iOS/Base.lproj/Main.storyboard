@@ -46,7 +46,7 @@
                                 <rect key="frame" x="323" y="551" width="42" height="30"/>
                                 <state key="normal" title="Droite"/>
                                 <connections>
-                                    <segue destination="UgK-Z7-KYf" kind="show" id="lO7-EC-ddc"/>
+                                    <segue destination="UgK-Z7-KYf" kind="show" identifier="toDetailSegue" id="pNx-aW-YVv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,16 +70,41 @@
             </objects>
             <point key="canvasLocation" x="1608.8" y="32.833583208395808"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="8TL-6X-x8o">
             <objects>
-                <viewController id="UgK-Z7-KYf" sceneMemberID="viewController">
+                <viewController id="UgK-Z7-KYf" customClass="DetailViewController" customModule="Groupe1iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e8k-4z-4B3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGp-eN-xYh">
+                                <rect key="frame" x="170" y="592" width="35" height="30"/>
+                                <state key="normal" title="Salut"/>
+                                <connections>
+                                    <action selector="didTapOnButton:" destination="UgK-Z7-KYf" eventType="touchUpInside" id="eyF-bx-fvt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message given" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-x4-rDM">
+                                <rect key="frame" x="130.5" y="74" width="114.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pxp-0Q-gSZ" firstAttribute="bottom" secondItem="VGp-eN-xYh" secondAttribute="bottom" constant="45" id="9et-oA-dUf"/>
+                            <constraint firstItem="xpX-x4-rDM" firstAttribute="centerX" secondItem="e8k-4z-4B3" secondAttribute="centerX" id="Yyl-Rm-2cK"/>
+                            <constraint firstItem="xpX-x4-rDM" firstAttribute="top" secondItem="Pxp-0Q-gSZ" secondAttribute="top" constant="10" id="nB3-k2-kfL"/>
+                            <constraint firstItem="VGp-eN-xYh" firstAttribute="centerX" secondItem="Pxp-0Q-gSZ" secondAttribute="centerX" id="zet-l8-8Uk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Pxp-0Q-gSZ"/>
                     </view>
+                    <connections>
+                        <outlet property="myButton" destination="VGp-eN-xYh" id="Hap-hR-4gF"/>
+                        <outlet property="myLabel" destination="xpX-x4-rDM" id="HvI-sz-fP0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2u3-bW-yCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfk-Mz-TxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="878"/>
+            <point key="canvasLocation" x="2148" y="770"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Op-Zl-Erv">

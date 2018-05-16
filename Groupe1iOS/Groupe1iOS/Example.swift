@@ -38,7 +38,19 @@ class Exemple {
         
         
         let scores = [1,2,3,77,55,4547]
+        scores.filter { (value) -> Bool in
+            value % 2 == 0
+            }.map { (value) -> String in
+                "\(value)"
+        }
+        
         for value in scores {
+            // 6 fois de 1 a 4547
+        }
+        scores.forEach { (value) in
+            // 6 fois de 1 a 4547
+        }
+        scores.forEachCustom { (value) in
             // 6 fois de 1 a 4547
         }
         for value in scores.reversed() {
@@ -49,9 +61,53 @@ class Exemple {
         let _ = isTrue(true)
         let _ = isTrue(true, andWithSecondValue: false)
         let _ = isTrue(true, orWithSecondValue: false)
+        
+        let _ = isFalse()
+        let _ = isFalse(true)
+        let _ = isFalse(true, andWithSecondValue: false)
+        
+        
+        let unePersonne = Personne(nom: "Martin", prenom: "Florian")
+        unePersonne.prenom
+        unePersonne.nom
+        
+        
+        
+        let personneList = [
+            Personne(nom: "Martin", prenom: "Florian"),
+            Personne(nom: "Jean", prenom: "Michel"),
+            Personne(nom: "Duran", prenom: "Lionnel"),
+            Personne(nom: "Jean", prenom: "Philipes")
+        ]
+        
+        // Dictionnaire, avec la cles --> Le nom de famille et une liste de personnes
+        // ----- The old way
+        var dictionnaire = [String: Array<Personne>]()
+        for personne in personneList {
+            let currentNom = personne.nom
+            var currentArray = dictionnaire[currentNom]
+            if currentArray == nil {
+                currentArray = []
+            }
+            currentArray?.append(personne)
+            dictionnaire[currentNom] = currentArray
+        }
+        
+        // ----- The new way
+        let dictionnaire2: [String: Array<Personne>] = Dictionary(grouping: personneList) { $0.nom }
+        
+        
+        let totalDesNombrePairFoisCent = scores.filter {
+            $0 % 2 == 0
+        }.map {
+            $0 * 100
+        }.reduce(0) { (total, value) -> Int in
+            return total + value
+        }
+        
+        let centMultiple = scores.first { $0 % 100 == 0 }
+        
     }
-    
-    
     
     func isTrue() -> Bool {
         return true
@@ -73,7 +129,20 @@ class Exemple {
     
     
     
+    func isFalse(_ firstValue: Bool = false, andWithSecondValue i: Bool = false) -> Bool {
+        return firstValue == false
+            && i == false
+    }
     
+}
+
+
+extension Array where Element == Int {
     
+    func forEachCustom(_ block: (Int) -> Void) {
+        for value in self {
+            block(value)
+        }
+    }
     
 }

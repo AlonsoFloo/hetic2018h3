@@ -16,12 +16,16 @@ class ViewController: UIViewController {
         self.title = "Bonjour"
         Exemple().run()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier, segueIdentifier == "toDetailSegue" else {
+            return
+        }
+        
+        let detailController = segue.destination as? DetailViewController
+        detailController?.theNewText = "Salut man !"
     }
-
+    
 
 }
 
