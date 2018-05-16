@@ -30,7 +30,7 @@
                                 <rect key="frame" x="329" y="561" width="36" height="30"/>
                                 <state key="normal" title="Right"/>
                                 <connections>
-                                    <segue destination="bXq-Vl-OaD" kind="show" id="7AB-zH-eNI"/>
+                                    <segue destination="bXq-Vl-OaD" kind="show" identifier="toDetailSegue" id="sex-6y-3Ks"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6e-D9-IrV">
@@ -70,16 +70,31 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="uRC-Y3-4F1">
             <objects>
-                <viewController id="bXq-Vl-OaD" sceneMemberID="viewController">
+                <viewController id="bXq-Vl-OaD" customClass="DetailViewController" customModule="Groupe2iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZDO-MZ-xcq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOo-2X-5cI">
+                                <rect key="frame" x="166.5" y="84" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TOo-2X-5cI" firstAttribute="top" secondItem="TCg-1l-YVG" secondAttribute="top" constant="20" id="HtX-oV-E0O"/>
+                            <constraint firstItem="TOo-2X-5cI" firstAttribute="centerX" secondItem="ZDO-MZ-xcq" secondAttribute="centerX" id="Jo3-ha-IfS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TCg-1l-YVG"/>
                     </view>
+                    <connections>
+                        <outlet property="myLabel" destination="TOo-2X-5cI" id="OfV-Nf-o2m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ER5-EF-QY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,11 +133,12 @@
                     </view>
                     <connections>
                         <outlet property="myCloseButton" destination="xNQ-qy-iLX" id="Bvu-EL-seL"/>
+                        <outlet property="myLabel" destination="NAa-TP-rbU" id="sSk-Dn-bw6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUn-Eo-upZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247" y="967"/>
+            <point key="canvasLocation" x="1172" y="892"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hiM-uw-LMi">
