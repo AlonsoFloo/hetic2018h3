@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ContactTableViewCell: UITableViewCell {
     
@@ -15,6 +17,7 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var pictureImageView: UIImageView!
     
     var contact: Contact! {
         // Méthode appelée après que contact ait été modifié
@@ -22,6 +25,12 @@ class ContactTableViewCell: UITableViewCell {
             firstNameLabel.text = contact.firstName
             lastNameLabel.text = contact.lastName
             phoneNumberLabel.text = contact.phoneNumber
+            
+            Alamofire.request(contact.pictureUrl).responseImage { (response) in
+                if let image = response.result.value {
+                    self.pictureImageView.image = image
+                }
+            }
         }
     }
 }

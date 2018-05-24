@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -126,6 +127,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zzs-OP-dCb">
+                                                    <rect key="frame" x="324" y="0.0" width="43" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Zzs-OP-dCb" secondAttribute="height" multiplier="1:1" id="CoM-wf-Wru"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="pAc-51-JzT" firstAttribute="leading" secondItem="7bZ-g3-tEq" secondAttribute="trailing" constant="8" id="64m-cC-IWA"/>
@@ -134,14 +141,19 @@
                                                 <constraint firstAttribute="bottom" secondItem="pAc-51-JzT" secondAttribute="bottom" id="BdE-Xn-3iA"/>
                                                 <constraint firstItem="6nK-bR-snp" firstAttribute="top" secondItem="ZK7-UL-9UZ" secondAttribute="top" id="Kv0-bR-kIG"/>
                                                 <constraint firstItem="6xN-dh-HYg" firstAttribute="top" secondItem="ZK7-UL-9UZ" secondAttribute="top" id="MPb-7I-ecS"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zzs-OP-dCb" secondAttribute="bottom" id="OvA-fC-FGL"/>
+                                                <constraint firstItem="Zzs-OP-dCb" firstAttribute="top" secondItem="ZK7-UL-9UZ" secondAttribute="top" id="aV3-R4-gCl"/>
                                                 <constraint firstItem="6xN-dh-HYg" firstAttribute="leading" secondItem="ZK7-UL-9UZ" secondAttribute="leading" constant="10" id="iyU-V8-p80"/>
                                                 <constraint firstAttribute="bottom" secondItem="7bZ-g3-tEq" secondAttribute="bottom" id="tGY-of-Iu2"/>
+                                                <constraint firstItem="pAc-51-JzT" firstAttribute="top" secondItem="6xN-dh-HYg" secondAttribute="bottom" constant="1" id="z5F-2Q-bVI"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zzs-OP-dCb" secondAttribute="trailing" constant="8" id="zm7-dx-GdM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="firstNameLabel" destination="6xN-dh-HYg" id="Z67-3e-KRZ"/>
                                             <outlet property="lastNameLabel" destination="6nK-bR-snp" id="0W1-uE-f5K"/>
                                             <outlet property="phoneNumberLabel" destination="pAc-51-JzT" id="B5f-ar-czv"/>
+                                            <outlet property="pictureImageView" destination="Zzs-OP-dCb" id="1I9-de-qyk"/>
                                             <segue destination="LN9-ud-eMB" kind="show" identifier="contactDetailSegueIdentifier" id="NQu-hu-5CT"/>
                                         </connections>
                                     </tableViewCell>
@@ -150,6 +162,17 @@
                                     <outlet property="dataSource" destination="UgK-Z7-KYf" id="lro-SE-VnM"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jO9-wj-Dz9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="607"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="OHv-Me-bn6">
+                                        <rect key="frame" x="169" y="285" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="0.69729238013698636" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -165,6 +188,7 @@
                         <viewLayoutGuide key="safeArea" id="Pxp-0Q-gSZ"/>
                     </view>
                     <connections>
+                        <outlet property="loadingView" destination="jO9-wj-Dz9" id="Bfl-Fd-VxK"/>
                         <outlet property="myButton" destination="VGp-eN-xYh" id="Hap-hR-4gF"/>
                         <outlet property="myLabel" destination="xpX-x4-rDM" id="HvI-sz-fP0"/>
                         <outlet property="myTableView" destination="efe-zB-H2P" id="TPM-u9-mOI"/>

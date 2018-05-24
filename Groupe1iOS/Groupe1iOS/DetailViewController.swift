@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var loadingView: UIView!
     
     var theNewText: String?
     
@@ -24,6 +25,7 @@ class DetailViewController: UIViewController {
         myButton.setTitleColor(UIColor.purple, for: .normal)
         myLabel.text = theNewText
         
+        /*
         contacts.append(Contact(firstName: "Yvan", lastName: "Moté", phoneNumber: "+3526661544744"))
         contacts.append(Contact(firstName: "Cédric", lastName: "Coron", phoneNumber: "0677239001"))
         contacts.append(Contact(firstName: "Antoine", lastName: "Dunn", phoneNumber: "0798402133"))
@@ -36,7 +38,25 @@ class DetailViewController: UIViewController {
         contacts.append(Contact(firstName: "Bérangère", lastName: "Martin", phoneNumber: "0688256031"))
         contacts.append(Contact(firstName: "Lucie", lastName: "Fer", phoneNumber: "666"))
         contacts.append(Contact(firstName: "Peter", lastName: "Gabriel", phoneNumber: "2983098230"))
-
+        */
+        
+        UserService.fetchUsers(result: { (contacts) in
+            
+            self.contacts.removeAll()  // Nettoyage du tableau actuel
+            self.contacts.append(contentsOf: contacts) // stockage des contacts reçus à partir du JSONS
+            
+            // Refresh UI
+            
+            self.myTableView.reloadData()
+            
+            // On masque la loading view
+            self.loadingView.isHidden = true
+            
+        }) { (error) in
+            
+            // On masque la loading view
+            self.loadingView.isHidden = true
+        }
 
     }
     

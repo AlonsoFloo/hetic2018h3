@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Contact {
     var firstName: String
     var lastName: String
     var phoneNumber: String
+    
+    var pictureUrl: String!
     
     init(firstName: String, lastName: String, phoneNumber: String) {
         self.firstName = firstName
@@ -19,4 +22,15 @@ class Contact {
         self.phoneNumber = phoneNumber
     }
     
+}
+
+extension Contact {
+    convenience init(jsonObject: JSON) {
+        let firstName = jsonObject["name"]["first"].stringValue
+        let lastName = jsonObject["name"]["last"].stringValue
+        let phoneNumber = jsonObject["phone"].stringValue
+        self.init(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
+        
+        self.pictureUrl = jsonObject["picture"]["thumbnail"].stringValue
+    }
 }
