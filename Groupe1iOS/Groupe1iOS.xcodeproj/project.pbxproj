@@ -16,6 +16,9 @@
 		0EDCEFD120AC2479007677A6 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCEFD020AC2479007677A6 /* Example.swift */; };
 		0EDCEFF720AC59CE007677A6 /* Personne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCEFF620AC59CE007677A6 /* Personne.swift */; };
 		0EDCEFF920AC655B007677A6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCEFF820AC655B007677A6 /* DetailViewController.swift */; };
+		EF8ACB7E20B6A4C20001F08A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8ACB7D20B6A4C20001F08A /* Contact.swift */; };
+		EF8ACB8020B6AA010001F08A /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8ACB7F20B6AA010001F08A /* ContactTableViewCell.swift */; };
+		EF8ACB8220B6B4F40001F08A /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8ACB8120B6B4F40001F08A /* ContactDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		0EDCEFD020AC2479007677A6 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		0EDCEFF620AC59CE007677A6 /* Personne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personne.swift; sourceTree = "<group>"; };
 		0EDCEFF820AC655B007677A6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EF8ACB7D20B6A4C20001F08A /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		EF8ACB7F20B6AA010001F08A /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		EF8ACB8120B6B4F40001F08A /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				0EDCEFD020AC2479007677A6 /* Example.swift */,
 				0EDCEFF620AC59CE007677A6 /* Personne.swift */,
 				0EDCEFF820AC655B007677A6 /* DetailViewController.swift */,
+				EF8ACB7D20B6A4C20001F08A /* Contact.swift */,
+				EF8ACB7F20B6AA010001F08A /* ContactTableViewCell.swift */,
+				EF8ACB8120B6B4F40001F08A /* ContactDetailViewController.swift */,
 			);
 			path = Groupe1iOS;
 			sourceTree = "<group>";
@@ -151,8 +160,11 @@
 				0EDCEFD120AC2479007677A6 /* Example.swift in Sources */,
 				0EDCEFBA20AC118F007677A6 /* ViewController.swift in Sources */,
 				0EDCEFF920AC655B007677A6 /* DetailViewController.swift in Sources */,
+				EF8ACB8220B6B4F40001F08A /* ContactDetailViewController.swift in Sources */,
+				EF8ACB8020B6AA010001F08A /* ContactTableViewCell.swift in Sources */,
 				0EDCEFCF20AC1F5F007677A6 /* ModalViewController.swift in Sources */,
 				0EDCEFB820AC118F007677A6 /* AppDelegate.swift in Sources */,
+				EF8ACB7E20B6A4C20001F08A /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
