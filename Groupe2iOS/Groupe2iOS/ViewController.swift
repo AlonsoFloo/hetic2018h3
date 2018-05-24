@@ -8,11 +8,31 @@
 
 import UIKit
 
+extension String {
+    func isPalindrome() -> Bool {
+        return self.lowercased() == String(self.lowercased().reversed())
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let text = "Kayak"
+        
+        text.isPalindrome()
+        
+        
+        
+        isPalindrome(text: text)
+        
+        
+    }
+    
+    func isPalindrome(text: String) -> Bool {
+        return text.lowercased() == String(text.lowercased().reversed())
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

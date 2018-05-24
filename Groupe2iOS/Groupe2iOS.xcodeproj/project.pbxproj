@@ -16,10 +16,13 @@
 		0EDCEFF520AC475C007677A6 /* Exemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCEFF420AC475C007677A6 /* Exemple.swift */; };
 		0EF9ABF320AC7AB6000240EE /* Personne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9ABF220AC7AB6000240EE /* Personne.swift */; };
 		0EF9ABF520AC86C5000240EE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9ABF420AC86C5000240EE /* DetailViewController.swift */; };
+		8C3465DB34FB2D8E66A30F62 /* Pods_Groupe2iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE214732A61596CF91AEFC7D /* Pods_Groupe2iOS.framework */; };
 		EF8ACB8420B6BDDE0001F08A /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8ACB8320B6BDDE0001F08A /* Forecast.swift */; };
 		EF8ACB8620B6C3300001F08A /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8ACB8520B6C3300001F08A /* ForecastTableViewCell.swift */; };
 		EF8ACB8820B6C7E70001F08A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8ACB8720B6C7E70001F08A /* Extensions.swift */; };
 		EF8ACB8A20B6CF2F0001F08A /* ForecastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8ACB8920B6CF2F0001F08A /* ForecastDetailViewController.swift */; };
+		EF8ACB9220B704500001F08A /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8ACB9120B704500001F08A /* UrlBuilder.swift */; };
+		EF8ACB9420B7045B0001F08A /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8ACB9320B7045B0001F08A /* ForecastService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +37,15 @@
 		0EDCEFF420AC475C007677A6 /* Exemple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exemple.swift; sourceTree = "<group>"; };
 		0EF9ABF220AC7AB6000240EE /* Personne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personne.swift; sourceTree = "<group>"; };
 		0EF9ABF420AC86C5000240EE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		35FBDE5D9AB705B617727BD7 /* Pods-Groupe2iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Groupe2iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Groupe2iOS/Pods-Groupe2iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ED4CF53927924E4DC73D0E10 /* Pods-Groupe2iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Groupe2iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Groupe2iOS/Pods-Groupe2iOS.release.xcconfig"; sourceTree = "<group>"; };
+		EE214732A61596CF91AEFC7D /* Pods_Groupe2iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Groupe2iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8ACB8320B6BDDE0001F08A /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		EF8ACB8520B6C3300001F08A /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		EF8ACB8720B6C7E70001F08A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EF8ACB8920B6CF2F0001F08A /* ForecastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailViewController.swift; sourceTree = "<group>"; };
+		EF8ACB9120B704500001F08A /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
+		EF8ACB9320B7045B0001F08A /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3465DB34FB2D8E66A30F62 /* Pods_Groupe2iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +65,8 @@
 			children = (
 				0EDCEFDD20AC3061007677A6 /* Groupe2iOS */,
 				0EDCEFDC20AC3061007677A6 /* Products */,
+				41DCF0940693F1A83043CA57 /* Pods */,
+				AB4FAE343EC3A97C9290FA13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				0EDCEFDE20AC3061007677A6 /* AppDelegate.swift */,
+				EF8ACB9020B704370001F08A /* Network */,
 				0EDCEFE020AC3061007677A6 /* ViewController.swift */,
 				0EDCEFE220AC3061007677A6 /* Main.storyboard */,
 				0EDCEFE520AC3062007677A6 /* Assets.xcassets */,
@@ -88,6 +100,32 @@
 			path = Groupe2iOS;
 			sourceTree = "<group>";
 		};
+		41DCF0940693F1A83043CA57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35FBDE5D9AB705B617727BD7 /* Pods-Groupe2iOS.debug.xcconfig */,
+				ED4CF53927924E4DC73D0E10 /* Pods-Groupe2iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AB4FAE343EC3A97C9290FA13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE214732A61596CF91AEFC7D /* Pods_Groupe2iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF8ACB9020B704370001F08A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EF8ACB9120B704500001F08A /* UrlBuilder.swift */,
+				EF8ACB9320B7045B0001F08A /* ForecastService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EDCEFED20AC3062007677A6 /* Build configuration list for PBXNativeTarget "Groupe2iOS" */;
 			buildPhases = (
+				172218396AEBAEC085413C59 /* [CP] Check Pods Manifest.lock */,
 				0EDCEFD720AC3061007677A6 /* Sources */,
 				0EDCEFD820AC3061007677A6 /* Frameworks */,
 				0EDCEFD920AC3061007677A6 /* Resources */,
+				0E88EA08452BEB4FC4A52CCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +194,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E88EA08452BEB4FC4A52CCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Groupe2iOS/Pods-Groupe2iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Groupe2iOS/Pods-Groupe2iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		172218396AEBAEC085413C59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Groupe2iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0EDCEFD720AC3061007677A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -163,7 +246,9 @@
 				EF8ACB8620B6C3300001F08A /* ForecastTableViewCell.swift in Sources */,
 				EF8ACB8820B6C7E70001F08A /* Extensions.swift in Sources */,
 				0EF9ABF320AC7AB6000240EE /* Personne.swift in Sources */,
+				EF8ACB9420B7045B0001F08A /* ForecastService.swift in Sources */,
 				0EDCEFF520AC475C007677A6 /* Exemple.swift in Sources */,
+				EF8ACB9220B704500001F08A /* UrlBuilder.swift in Sources */,
 				EF8ACB8420B6BDDE0001F08A /* Forecast.swift in Sources */,
 				0EDCEFE120AC3061007677A6 /* ViewController.swift in Sources */,
 				0EF9ABF520AC86C5000240EE /* DetailViewController.swift in Sources */,
@@ -310,14 +395,12 @@
 		};
 		0EDCEFEE20AC3062007677A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35FBDE5D9AB705B617727BD7 /* Pods-Groupe2iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Groupe2iOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.hetic.Groupe2iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -327,14 +410,12 @@
 		};
 		0EDCEFEF20AC3062007677A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED4CF53927924E4DC73D0E10 /* Pods-Groupe2iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Groupe2iOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.hetic.Groupe2iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

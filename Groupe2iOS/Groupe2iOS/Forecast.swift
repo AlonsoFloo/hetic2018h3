@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Forecast {
     var minimumTemperature: Float
     var maximumTemperature: Float
     var descriptionText: String
+    var icon: String!
     
     init(minimumTemperature: Float, maximumTemperature: Float, descriptionText: String) {
         self.minimumTemperature = minimumTemperature
@@ -19,3 +21,19 @@ class Forecast {
         self.descriptionText = descriptionText
     }
 }
+
+extension Forecast {
+    convenience init(jsonObject: JSON) {
+        let minimumTemperature = jsonObject["main"]["temp_min"].floatValue
+        let maximumTemperature = jsonObject["main"]["temp_max"].floatValue
+        
+        let weatherObject = jsonObject["weather"].arrayValue.first ?? JSON()
+        
+        let descriptionText = weatherObject["description"].stringValue
+        
+        self.init(minimumTemperature: minimumTemperature, maximumTemperature: maximumTemperature, descriptionText: descriptionText)
+        
+        self.icon = weatherObject["icon"].stringValue
+    }
+}
+

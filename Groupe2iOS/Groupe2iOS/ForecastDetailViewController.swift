@@ -17,7 +17,7 @@ class ForecastDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = forecast.descriptionText
     }
 }

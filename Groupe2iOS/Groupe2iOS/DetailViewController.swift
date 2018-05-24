@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
 
         myLabel.text = "Valeur est : \(mavariable)"
         
+        
+        /*
         forecasts.append(Forecast(minimumTemperature: 10.0, maximumTemperature: 25.0, descriptionText: "Ensoleillé"))
         forecasts.append(Forecast(minimumTemperature: 17.0, maximumTemperature: 20.0, descriptionText: "Pluvieux"))
         forecasts.append(Forecast(minimumTemperature: 12.0, maximumTemperature: 23.5, descriptionText: "Nuageux"))
@@ -31,6 +33,21 @@ class DetailViewController: UIViewController {
         forecasts.append(Forecast(minimumTemperature: 12.0, maximumTemperature: 20.0, descriptionText: "Pluvieux"))
         forecasts.append(Forecast(minimumTemperature: 11.0, maximumTemperature: 20.0, descriptionText: "Ensoleillé"))
         forecasts.append(Forecast(minimumTemperature: 17.0, maximumTemperature: 14.0, descriptionText: "Nuageux"))
+        */
+        
+        ForecastService.fetchForecasts(success: { (forecasts) in
+            // 👍
+            
+            self.forecasts.removeAll() // nettoyage du tableau
+            self.forecasts.append(contentsOf: forecasts)  // On Stocke les objets en local
+            
+            //Refresh
+            self.myTableView.reloadData()  // le dataSource va être appelé pour afficher les cellules
+            
+        }) { (error) in
+            // 👎
+        }
+        
         
     }
     
